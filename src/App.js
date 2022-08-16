@@ -8,6 +8,7 @@ import React from "react";
 
 // working
 function ShowQuestion({ question }) {
+  console.log(question);
   return (
     <div>
       <h2>Question</h2>
@@ -16,31 +17,15 @@ function ShowQuestion({ question }) {
   );
 }
 
-function ShowAnswers({ answers }) {
-  console.log({ answers: answers });
-  // const ans = {answers};
-  // console.log(ans);
-  const allAnswers = answers.map((answer) => <li>{answer}</li>);
-  // console.log({allAnswers});
-
-  return (
-    <div>
-      <p>{allAnswers}</p>
-    </div>
-  );
+function ShowAnswers(props) {
+  console.log(props.answers);
+  props.answers.map((answer) => console.log(answer));
 
   // return (
   //   <div>
-  //     {/* <h2>Question</h2> */}
-  //     {answers.map((x) => {
-  //       return (
-  //         <div>
-  //           <p>{x}</p>
-  //         </div>
-  //       );
-  //     })}
+  //     <p>test</p>
   //   </div>
-  // );
+  // )
 }
 
 function App() {
@@ -81,7 +66,7 @@ function App() {
         {/* <Main question={questionsArray.question} /> */}
         <Footer />
         <ShowQuestion question={questionsArray.question} />
-        <ShowAnswers answers={questionsArray.answers} />
+        <ShowAnswers answers={["answer 1", "answer 2", "answer 3"]} />
         {/* <p>{questionsArray.type} */}
       </header>
     </div>
