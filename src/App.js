@@ -17,25 +17,30 @@ function ShowQuestion({ question }) {
 }
 
 function ShowAnswers({ answers }) {
-  console.log(answers);
+  console.log({ answers: answers });
   // const ans = {answers};
   // console.log(ans);
+  const allAnswers = answers.map((answer) => <li>{answer}</li>);
+  // console.log({allAnswers});
 
   return (
     <div>
-      {/* <h2>Question</h2> */}
-      {answers.map((x) => {
-        return (
-          <div>
-            <p>{x}</p>
-          </div>
-        );
-      })}
-
-      {/* <h2>{ans[0]}</h2> */}
-      {/* {myList} */}
+      <p>{allAnswers}</p>
     </div>
   );
+
+  // return (
+  //   <div>
+  //     {/* <h2>Question</h2> */}
+  //     {answers.map((x) => {
+  //       return (
+  //         <div>
+  //           <p>{x}</p>
+  //         </div>
+  //       );
+  //     })}
+  //   </div>
+  // );
 }
 
 function App() {
